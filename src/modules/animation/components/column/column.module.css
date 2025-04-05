@@ -1,0 +1,12 @@
+.column {
+    flex: 1 1 auto;
+    background-color: var(--secondary-color);
+
+    animation: columnAnimation 1s ease forwards;
+}
+
+@keyframes columnAnimation {
+    to {
+        transform: translateY(-100%);
+    }
+}

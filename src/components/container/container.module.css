@@ -1,0 +1,6 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: var(--desktop-width);
+    padding: 0 var(--pad);
+}

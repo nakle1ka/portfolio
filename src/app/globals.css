@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --red: #E4344F;
+  --blue: #45AFE3;
+  --secondary-color: #30314D;
+
+  --index: calc(1vw + 1vh);
+  --pad: 5px;
+
+  --desktop-width: 1440px;
 }
 
 @theme inline {
@@ -19,8 +28,18 @@
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #2D2F4A, #202135);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

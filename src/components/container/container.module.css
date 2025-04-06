@@ -1,6 +1,13 @@
 .container {
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     max-width: var(--desktop-width);
-    padding: 0 var(--pad);
+    padding: 0 50px;
+}
+
+@media (max-width: 670px) {
+    .container {
+        padding: var(--pad);
+    }
 }

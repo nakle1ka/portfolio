@@ -2,22 +2,26 @@
 
 import { useEffect } from 'react';
 import { useMouse } from './hooks/useMouse';
+
 import { Layer } from './components/layer/layer';
-import styles from './greeting.module.css';
 import { Button } from '@/components/ui/button';
+
+import styles from './greeting.module.css';
 
 type Props = {
 
 }
 
+
+// TODO добавить анимации
 export const Greeting: React.FC<Props> = () => {
     const { x, y } = useMouse();
 
     useEffect(() => {
         Object.assign(document.documentElement, {
             style: `
-                --move-x: ${(x - window.innerHeight / 2) * -0.005}deg;
-                --move-y: ${(y - window.innerHeight / 2) * 0.01}deg;
+                --move-x: ${(x - window.innerHeight / 2) * -(10 / window.innerWidth)}deg;
+                --move-y: ${(y - window.innerHeight / 2) * (11 / window.innerHeight)}deg;
             `
         })
     }, [x, y]);
@@ -34,12 +38,10 @@ export const Greeting: React.FC<Props> = () => {
                             <div className={styles.text}>
                                 <h2 className={styles.title}><span>Hello!</span> My name is <br /> Artem</h2>
                                 <p className={styles.desc}>I am a <span>frontend developer</span></p>
-                                {/* TODO заменить кнопку */}
 
                                 <Button asChild className={styles.button}>
                                     <a href="#">My GitHub</a>
                                 </Button>
-
                             </div>
                         </div>
 

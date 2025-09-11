@@ -1,0 +1,10 @@
+#skills, #frontend, #backend {
+    width: 100%;
+    text-align: center;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}

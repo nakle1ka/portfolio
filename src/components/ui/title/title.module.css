@@ -1,0 +1,29 @@
+/* size */
+.lg {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.md {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.sm {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* color */
+
+.white {
+    color: white;
+}
+
+.red {
+    color: var(--red);
+}
+
+.blue {
+    color: var(--blue);
+}

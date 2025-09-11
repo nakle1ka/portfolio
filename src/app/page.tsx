@@ -1,5 +1,6 @@
 import { Animation } from "@/modules/animation/animation"
 import { Greeting } from "@/modules/greeting/greeting";
+import { Skills } from "@/modules/skills/skills";
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Animation />
 
       <Greeting />
+      <Skills />
     </>
   );
 }

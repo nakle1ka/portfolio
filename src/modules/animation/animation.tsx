@@ -11,12 +11,11 @@ type Props = {
 export const Animation: React.FC<Props> = ({ }) => {
     const [isShow, setIsShow] = useState<boolean>(true);
 
-    // Но только нечётное
     const columnsCount = 5;
     const animationDuration = 2000; /* ms */
 
     useEffect(() => {
-        const timeoutId = setTimeout(() => setIsShow(false), animationDuration + 500);
+        const timeoutId = setTimeout(() => setIsShow(false), animationDuration + 750);
 
         return () => clearTimeout(timeoutId);
     }, [])

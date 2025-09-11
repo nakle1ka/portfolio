@@ -37,10 +37,10 @@ export const Greeting: React.FC<Props> = () => {
                         <div className={styles.textContainer}>
                             <div className={styles.text}>
                                 <h2 className={styles.title}><span>Hello!</span> My name is <br /> Artem</h2>
-                                <p className={styles.desc}>I am a <span>frontend developer</span></p>
+                                <p className={styles.desc}>I am a <span>fullstack developer</span></p>
 
                                 <Button asChild className={styles.button}>
-                                    <a href="#">My GitHub</a>
+                                    <a href="https://github.com/nakle1ka" target='_blank'>My GitHub</a>
                                 </Button>
                             </div>
                         </div>

@@ -1,0 +1,9 @@
+.element {
+    height: 100%;
+    flex: 0 0 auto;
+    padding-left: 10px;
+}
+
+.element:first-child {
+    padding: 0;
+}

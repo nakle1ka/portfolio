@@ -16,8 +16,6 @@
 
   --radius: 0.625rem;
 
-  --background: ;
-
   --foreground: oklch(0.145 0 0);
 
   --card: oklch(1 0 0);
@@ -123,6 +121,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  scrollbar-color: rgba(0, 0, 0, 0.5) var(--secondary-color);
 }
 
 html {

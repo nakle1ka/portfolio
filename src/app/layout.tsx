@@ -22,7 +22,8 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} antialiased`}
       >
-        {children}
+        <div id="dialog-area"></div>
+        <div id="root">{children}</div>
       </body>
     </html>
   );

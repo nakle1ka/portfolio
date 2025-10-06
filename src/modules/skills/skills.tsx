@@ -1,8 +1,8 @@
 import { Title } from '@/components/ui/title/title';
-import styles from './skills.module.css';
 import { Container } from '@/components/container/container';
 import { Group } from './components/group/group';
 import { frontendSkills, backendSkills } from './helpers/skillsList';
+import styles from './skills.module.css';
 
 type Props = {
 

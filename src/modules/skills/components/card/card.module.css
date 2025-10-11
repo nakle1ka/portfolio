@@ -6,6 +6,13 @@
     gap: 10px;
     background-color: var(--secondary-color);
     border-radius: 10px;
+
+    opacity: 0;
+    transform: translateX(-10px);
+
+    animation-timing-function: ease;
+    animation-duration: 800ms;
+    animation-fill-mode: forwards;
 }
 
 .icon {
@@ -20,4 +27,17 @@
 
     display: flex;
     align-items: center;
+}
+
+@keyframes animate {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 850px) {
+    .skill {
+        height: 90px;
+    }   
 }

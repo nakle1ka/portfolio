@@ -1,14 +1,12 @@
 import { Title } from '@/components/ui/title/title';
 import { Container } from '@/components/container/container';
 import { Group } from './components/group/group';
+
 import { frontendSkills, backendSkills } from './helpers/skillsList';
+
 import styles from './skills.module.css';
 
-type Props = {
-
-}
-
-export const Skills: React.FC<Props> = () => {
+export const Skills: React.FC = () => {
     return (
         <Container>
             <div className={styles.skills} >

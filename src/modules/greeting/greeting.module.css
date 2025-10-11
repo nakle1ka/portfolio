@@ -156,6 +156,7 @@
 @media (max-width: 1200px) {
     .greeting {
         padding: 0 5vw;
+        height: 105vh;
     }
 
     .textContainer {
@@ -164,15 +165,15 @@
     }
 
     .title {
-        font-size: calc(var(--index) * 3);
+        font-size: calc(var(--index) * 2.8);
     }
 
     .desc {
-        font-size: calc(var(--index) * 1.8);
+        font-size: calc(var(--index) * 1.6);
     }
 
     .button {
-        width: calc(var(--index) * 15);
+        width: calc(var(--index) * 16);
         height: calc(var(--index) * 2.5);
         font-size: calc(var(--index) * 1.2);
     }

@@ -22,7 +22,7 @@ export const Skills: React.FC = () => {
                     <div className={styles.group}>
                         <Title color='blue' id={styles.backend}>Backend</Title>
 
-                        <Group list={backendSkills} />
+                        <Group list={backendSkills} isReversed={true} />
                     </div>
                 </div>
             </div >

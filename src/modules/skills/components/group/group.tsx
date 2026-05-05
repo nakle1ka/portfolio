@@ -10,9 +10,10 @@ import styles from './group.module.css';
 
 type Props = {
     list: TSkill[];
+    isReversed?: boolean;
 }
 
-export const Group: React.FC<Props> = ({ list }) => {
+export const Group: React.FC<Props> = ({ list, isReversed = false }) => {
     const { inView, ref } = useInView({
         threshold: 0.1,
         triggerOnce: true
@@ -25,6 +26,7 @@ export const Group: React.FC<Props> = ({ list }) => {
                 name={s.name}
                 count={i}
                 inView={inView}
+                isReversed={isReversed}
                 key={s.name}
             />)}
         </div>

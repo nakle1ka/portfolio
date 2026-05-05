@@ -8,11 +8,15 @@
     border-radius: 10px;
 
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateX(-5px);
 
     animation-timing-function: ease;
     animation-duration: 800ms;
     animation-fill-mode: forwards;
+}
+
+.reversed {
+    transform: translateX(5px);
 }
 
 .icon {
@@ -21,7 +25,7 @@
 }
 
 .name {
-    font-size: 25px;
+    font-size: 1.6rem;
 
     width: 100%;
 

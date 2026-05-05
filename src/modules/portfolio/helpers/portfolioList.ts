@@ -3,27 +3,98 @@ import { TPortfolioCard } from "@/types/portfolioCard";
 // TODO Пополнить портфолио
 export const portfolioList: TPortfolioCard[] = [
     {
-        images: ["https://cdn.sanity.io/images/9pstyp3p/production/df85a0ffbd2b7311900e12b01049fd48db245c4c-2008x1034.webp/jira-okr-epic-timeline.webp", "https://cdn.sanity.io/images/9pstyp3p/production/df85a0ffbd2b7311900e12b01049fd48db245c4c-2008x1034.webp/jira-okr-epic-timeline.webp"],
-        href: "#",
-        title: "Jira App (test)1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim!Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim!Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim!Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim!Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim!Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim!",
-    },
-    {
-        images: ["https://besthard.ru/wa-data/public/shop/products/65/30/293065/images/48863/48863.750x0.png", "https://cdn.sanity.io/images/9pstyp3p/production/df85a0ffbd2b7311900e12b01049fd48db245c4c-2008x1034.webp/jira-okr-epic-timeline.webp"],
-        href: "#",
-        title: "Jira App (test)2",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim!",
-    },
-    {
-        images: ["https://cdn.sanity.io/images/9pstyp3p/production/df85a0ffbd2b7311900e12b01049fd48db245c4c-2008x1034.webp/jira-okr-epic-timeline.webp"],
-        href: "#",
-        title: "Jira App (test)3",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim!",
-    },
-    {
-        images: ["https://cdn.sanity.io/images/9pstyp3p/production/df85a0ffbd2b7311900e12b01049fd48db245c4c-2008x1034.webp/jira-okr-epic-timeline.webp"],
-        href: "#",
-        title: "Jira App (test)4",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veniam non illo odio incidunt enim!",
+        images: [
+            {
+                id: 1,
+                url: "/images/portfolio/tramplin/main.png"
+            },
+            {
+                id: 2,
+                url: "/images/portfolio/tramplin/schema.png"
+            },
+        ],
+        href: "https://github.com/nakle1ka/Tramplin",
+        title: "Tramplin",
+        description: "The \"Tramplin\" platform is a centralized platform for interaction between students, alumni, employers, and university career centers in IT and related fields.",
+        readme: `
+## 🚀 Трамплин — Карьерная экосистема для студентов и IT-компаний
+
+**Конкурс:** Международная олимпиада «IT-Планета 2026»  
+**Трек:** Прикладное программирование if...else  
+**Этап:** Второй (финальный)
+
+Проект реализован в соответствии с техническим заданием и включает авторские решения, обоснованные в презентации.
+
+---
+
+## 📌 О проекте
+
+**«Трамплин»** — это интерактивная карьерная платформа, объединяющая студентов и выпускников (соискателей), работодателей (компании и ИП), а также карьерные центры вузов и модераторов (кураторов). Платформа позволяет не только искать вакансии и стажировки, но и строить карьеру с нуля: находить менторов, участвовать в мероприятиях, получать рекомендации через профессиональный нетворкинг.
+
+---
+
+## 🎯 Реализованный функционал
+
+### 🌍 Главная страница
+- Карта с маркерами вакансий, стажировок, менторских программ и мероприятий.
+- Списочное отображение (лента) с фильтрацией.
+- Фильтры: навыки (теги), уровень зарплаты, формат работы.
+- Авторизация и регистрация.
+- Избранное (сохраняется в браузере для неавторизованных пользователей).
+- Особый цвет маркеров для компаний и вакансий из избранного.
+
+### 👤 Роли и личные кабинеты
+
+#### 🔹 Соискатель
+- Личные данные: ФИО, вуз, курс или год выпуска.
+- Резюме и портфолио: навыки, проекты, ссылки на репозитории.
+- История откликов с актуальными статусами.
+- Избранные вакансии и мероприятия.
+- Список профессиональных контактов (друзья) с возможностью видеть карьерные интересы друг друга.
+- Настройки приватности: можно скрыть или открыть резюме и отклики.
+- Возможность рекомендовать контактов на вакансии.
+
+#### 🔹 Работодатель
+- Карточка компании: название, описание, сфера деятельности, сайт, соцсети, фото офиса или видео-презентация.
+- Форма создания новых возможностей: вакансий, стажировок, мероприятий.
+- Список активных, закрытых и запланированных возможностей с редактированием.
+- Просмотр откликов соискателей со статусами «принят», «отклонён», «в резерве».
+- Поиск и фильтрация по своим вакансиям и откликам.
+
+#### 🔹 Куратор (модератор)
+- Предустановленный администратор с полными правами.
+- Администратор может создавать других кураторов.
+- Модерация карточек возможностей и личных кабинетов пользователей.
+- Верификация компаний.
+
+### 🃏 Карточка возможности
+
+Каждая карточка содержит:
+- Название позиции или мероприятия.
+- Краткое описание, требования к кандидату, медиаконтент.
+- Компанию-работодателя или организатора.
+- Тип: стажировка, вакансия (стажёрская / Junior+), менторская программа, карьерное мероприятие.
+- Формат работы: офис, гибрид, удалённо.
+- Место проведения: адрес офиса или город для удалённой работы.
+- Дату публикации и срок действия вакансии / дату проведения мероприятия.
+- Контакты и информационные ресурсы работодателя.
+- Теги: требуемые технологии (Python, Java, SQL и др.), уровень (Junior, Middle), тип занятости (полная, частичная, проектная).
+
+**Дополнительно:** при наведении на маркер на карте отображается модульная карточка с названием, компанией, зарплатой, ключевыми навыками и кнопкой «Подробнее».
+
+---
+
+## 🧠 Авторские решения
+
+Поскольку техническое задание оставляло несколько зон для самостоятельной проработки, команда разработчиков предложила следующие механизмы:
+- **Модерация контента** — двухуровневая система: премодерация новых карточек возможностей и постмодерация на основе жалоб пользователей. Автоматическая проверка текстов на спам и токсичность.
+
+- **Система тегов** —  работодатели и кураторы могут добавлять новые теги.
+
+- **Приватность и нетворкинг** — два уровня приватности профиля соискателя: закрытый и доступеный всем авторизованным пользователям.
+
+- **Модульная карточка на карте** — всплывающее окно при наведении мыши на маркер показывает самую важную информацию: название, компанию, зарплату (или грант), три ключевых тега.
+
+`
     },
 ]

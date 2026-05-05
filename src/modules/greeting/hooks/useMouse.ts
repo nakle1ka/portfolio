@@ -12,7 +12,7 @@ export function useMouse() {
     useEffect(() => {
         document.addEventListener("mousemove", updateValues);
 
-        return () => removeEventListener("mousedown", updateValues)
+        return () => removeEventListener("mousemove", updateValues)
     }, [])
 
     return { x, y };

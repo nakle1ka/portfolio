@@ -3,6 +3,7 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import styles from "./carouselContainer.module.css";
+import { useSwipe } from "@/hooks/useSwipe";
 
 type Props = {
     elementsCount: number
@@ -24,6 +25,8 @@ export const CarouselContainer: React.FC<React.PropsWithChildren<Props>> = ({
 }) => {
     const ref = useRef(null);
     const [dynamicElementsCount, setDynamicElementsCount] = useState<number>(1);
+
+    useSwipe(ref, handleScrollLeft, handleScrollRight);
 
     useEffect(() => {
         if (!ref.current) return;
@@ -78,6 +81,10 @@ export const CarouselContainer: React.FC<React.PropsWithChildren<Props>> = ({
             >
                 <ArrowRight className={styles.svg} />
             </button>
+
+            <div className={styles.counter}>
+                {activeIndex + 1} / {elementsCount}
+            </div>
         </div>
     )
 }

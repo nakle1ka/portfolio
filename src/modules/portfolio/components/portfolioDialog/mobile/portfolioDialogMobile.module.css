@@ -1,0 +1,191 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.sheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 95vh;
+    max-height: 95vh;
+
+    background: var(--secondary-color);
+    border-radius: 15px 15px 0 0;
+    padding: 20px 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sheetOpen {
+    animation: trans 0.6s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 4px;
+}
+
+#title {
+    font-size: 1.5rem;
+    margin: 0;
+    flex: 1;
+    padding-right: 8px;
+}
+
+#title::after {
+    display: none;
+}
+
+.close {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    transition: background-color 0.2s;
+}
+
+.closeSvg {
+    width: 20px;
+    height: 20px;
+}
+
+.carouselWrapper {
+    margin: 0 -16px;
+    padding: 0 16px;
+}
+
+.carousel {
+    width: 100%;
+}
+
+.image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+.description {
+    line-height: 1.5;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    margin-top: auto;
+}
+
+.dragIndicator {
+    width: 40px;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    margin: 0 auto 8px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes trans {
+    to {
+        transform: translateY(0);
+    }
+}
+
+@media (orientation: portrait) and (max-height: 700px) {
+    .sheet {
+        height: 95vh;
+        max-height: 95vh;
+    }
+    
+    .image {
+        height: 200px;
+    }
+}
+
+@media (orientation: landscape) {
+    .sheet {
+        height: 95vh;
+        max-height: 95vh;
+        padding: 16px;
+    }
+    
+    .content {
+        flex-direction: row;
+        gap: 24px;
+    }
+    
+    .description {
+        flex: 1;
+        max-height: none;
+    }
+    
+    .button {
+        width: auto;
+        min-width: 160px;
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 360px) {
+    .sheet {
+        padding: 16px 12px;
+        gap: 12px;
+    }
+    
+    #title {
+        font-size: 1.3rem;
+    }
+    
+    .image {
+        height: 200px;
+    }
+}
+
+@supports (padding-top: env(safe-area-inset-top)) {
+    .sheet {
+        padding-top: calc(20px + env(safe-area-inset-top));
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+}

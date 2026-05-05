@@ -1,6 +1,12 @@
+type CardImage = {
+    id: number;
+    url: string;
+}
+
 export type TPortfolioCard = {
-    images: string[],
+    images: CardImage[],
     href: string,
     title: string,
-    description: string
+    description: string,
+    readme: string
 }

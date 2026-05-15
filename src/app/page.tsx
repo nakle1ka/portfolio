@@ -1,4 +1,5 @@
 import { Animation } from "@/modules/animation/animation"
+import { Contacts } from "@/modules/contacts/contacts";
 import { Greeting } from "@/modules/greeting/greeting";
 import { Portfolio } from "@/modules/portfolio/portfolio";
 import { Skills } from "@/modules/skills/skills";
@@ -12,6 +13,7 @@ export default function Home() {
       <Greeting />
       <Skills />
       <Portfolio />
+      <Contacts />
     </>
   );
 }

@@ -1,0 +1,56 @@
+.wrapper {
+    background-color: var(--secondary-color);
+    margin-top: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow-y: hidden;
+    margin-top: 10px;
+}
+
+.contact {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    gap: 10px;
+
+    overflow-y: hidden;
+
+    transform: translateY(10px);
+    opacity: 0;
+
+    animation-delay: 250ms;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+}
+
+.inView .contact {
+    animation-name: animation;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+}
+
+.p {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+@keyframes animation {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 850px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

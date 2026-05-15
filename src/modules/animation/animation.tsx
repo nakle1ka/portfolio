@@ -4,11 +4,7 @@ import { useEffect, useState } from 'react';
 import styles from './animation.module.css';
 import { Column } from './components/column/column';
 
-type Props = {
-
-}
-
-export const Animation: React.FC<Props> = ({ }) => {
+export const Animation = () => {
     const [isShow, setIsShow] = useState<boolean>(true);
 
     const columnsCount = 5;

@@ -8,13 +8,7 @@ import { Button } from '@/components/ui/button';
 
 import styles from './greeting.module.css';
 
-type Props = {
-
-}
-
-
-// TODO добавить анимации
-export const Greeting: React.FC<Props> = () => {
+export const Greeting = () => {
     const { x, y } = useMouse();
 
     useEffect(() => {

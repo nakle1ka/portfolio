@@ -1,5 +1,10 @@
 import { TPortfolioCard } from "@/types/portfolioCard";
-import { chessEngineReadme, tramplinReadme, financeReadme } from "./readme";
+import {
+    chessEngineReadme,
+    tramplinReadme,
+    financeReadme,
+    ArbitraryPrecisionArithmeticReadme
+} from "./readme";
 
 export const portfolioList: TPortfolioCard[] = [
     {
@@ -57,5 +62,17 @@ export const portfolioList: TPortfolioCard[] = [
         title: "Finance",
         description: "Finance is a personal income & expense diary — one of my first web projects. It supports user authentication, transaction cards, profile stats, and a dark/light theme toggle.",
         readme: financeReadme
+    },
+    {
+        images: [
+            {
+                id: 2355,
+                url: "/images/portfolio/arithmetic/cli.png"
+            },
+        ],
+        href: "https://github.com/nakle1ka/quadratic-equation",
+        title: "Arbitrary-Precision Arithmetic",
+        description: "This project implements a quadratic equation solver using arbitrary-precision arithmetic and input validation. It supports calculations with large numbers that exceed the limits of standard data types.",
+        readme: ArbitraryPrecisionArithmeticReadme
     },
 ]

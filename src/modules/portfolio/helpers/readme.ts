@@ -160,3 +160,28 @@ The project uses:
 - **Database**: MongoDB
 - **Authentication**: JWT
 `;
+
+export const ArbitraryPrecisionArithmeticReadme = `
+**Application Lifecycle:** \`Input (CLI) -> Controller -> Validator -> UseCase (Solver) -> Presenter -> Output (CLI)\`
+
+## Features
+
+- 🔢 **Arbitrary-Precision Arithmetic** — handling numbers with arbitrary precision.
+- ✅ **Input Validation** — verifying the correctness of input data.
+- 🧪 **Unit Tests** — test coverage for core functionality.
+
+## Build and Run
+
+### Requirements
+
+- A compiler with C++11 support or higher (g++, clang++)
+
+### Build and Run Commands
+
+\`\`\`bash
+make run_app                # Run the application
+make run_solver_tests       # Test core solver logic
+make run_long_decimal_tests # Test arbitrary-precision arithmetic
+make run_validator_tests    # Test input validation
+\`\`\`
+`;

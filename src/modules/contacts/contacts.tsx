@@ -1,16 +1,12 @@
 "use client";
 
+import { useInView } from "react-intersection-observer";
 import { Container } from "@/components/container/container"
 import { Title } from "@/components/ui/title/title"
 import { Mail, Phone, Send } from "lucide-react"
 import styles from "./contacts.module.css"
-import { useInView } from "react-intersection-observer";
 
-type Props = {
-
-}
-
-export const Contacts: React.FC<Props> = () => {
+export const Contacts = () => {
     const { inView, ref } = useInView({
         triggerOnce: true,
         threshold: 0.1

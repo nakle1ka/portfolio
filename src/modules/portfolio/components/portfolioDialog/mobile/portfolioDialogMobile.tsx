@@ -3,7 +3,6 @@ import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
 import { PortfolioDialogContent } from "../content/portfolioDialogContent";
-import { Title } from "@/components/ui/title/title";
 
 import { TPortfolioCard } from "@/types/portfolioCard";
 

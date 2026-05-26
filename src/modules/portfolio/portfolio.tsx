@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 import { Container } from "@/components/container/container"
 import { Title } from "@/components/ui/title/title"
@@ -16,26 +17,36 @@ export const Portfolio: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const visibleElementsCount: TVisibleElementsCount = "dynamic";
 
+    const { inView, ref } = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    })
+
     return (
         <Container>
-            <Title size="lg" id={styles.title}>Portfolio</Title>
-            
-            <CarouselContainer
-                activeIndex={activeIndex}
-                setActiveIndex={setActiveIndex}
-                elementsCount={portfolioList.length}
-                visibleElementsCount={visibleElementsCount}
-                className={styles.carouselContainer}
-            >
-                {portfolioList.map(el => (
-                    <CarouselElement
-                        visibleElementsCount={visibleElementsCount}
-                        key={el.title}
-                    >
-                        <PortfolioCard card={el} />
-                    </CarouselElement>
-                ))}
-            </CarouselContainer>
+            <div className={`${styles.content} ${inView ? styles.inView : ""}`} ref={ref}>
+                <Title size="lg" id={styles.title}>Portfolio</Title>
+                
+                <CarouselContainer
+                    activeIndex={activeIndex}
+                    setActiveIndex={setActiveIndex}
+                    elementsCount={portfolioList.length}
+                    visibleElementsCount={visibleElementsCount}
+                    className={styles.carouselContainer}
+                >
+                    {portfolioList.map((el, index) => (
+                        <CarouselElement
+                            visibleElementsCount={visibleElementsCount}
+                            key={el.title}
+                        >
+                            <PortfolioCard 
+                                card={el} 
+                                animationDelay={index * 150}
+                            />
+                        </CarouselElement>
+                    ))}
+                </CarouselContainer>
+            </div>
         </Container>
     )
 }

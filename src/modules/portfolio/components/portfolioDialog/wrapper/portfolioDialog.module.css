@@ -1,121 +1,272 @@
-.background {
+.overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-
+    backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
     justify-content: center;
-
     z-index: 100;
-    opacity: 0;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
 
-    animation-name: transition;
-    animation-timing-function: ease;
-    animation-duration: .2s;
-    animation-fill-mode: forwards;
+.overlayClosing {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+.dialog {
+    position: relative;
+    background-color: var(--secondary-color);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 1000px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+.dialogClosing {
+    animation: slideDown 0.3s ease forwards;
 }
 
 .close {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-
-    width: 30px;
-    aspect-ratio: 1 / 1;
-
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    z-index: 2;
+    z-index: 10;
+    transition: background-color 0.2s;
 }
 
-.close .closeSvg {
-    width: 100%;
-    height: 100%;
+.close:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.board {
-    position: relative;
-    background-color: var(--secondary-color);
-    padding: 25px;
-    border-radius: 15px;
-
-    max-width: 65vw;
-    height: 90vh;
-
+.scrollableContent {
+    padding: 32px;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 24px;
+}
 
-    overflow-x: auto;
-
-    opacity: .8;
-    transform: translateY(20px);
-
-    animation-name: transition;
-    animation-timing-function: ease;
-    animation-duration: 300ms;
-    animation-fill-mode: forwards;
+.carouselWrapper {
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .carousel {
-    width: auto;
+    width: 100%;
+    --visible-elements-count: 1;
+    height: auto;
+    min-height: 400px;
+    max-height: 600px;
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
 }
 
 .image {
-    flex: 0 0 auto;
-    max-height: 400px;
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-.description {
-    font-size: 1.5rem;
-    color: white;
-    flex-grow: 1;
-}
-
-.description,
-#title {
     width: 100%;
-    position: relative;
+    height: 100%;
+    max-height: 600px;
+    object-fit: contain;
 }
 
 #title {
     text-align: center;
-    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 16px;
 }
 
 #title::after {
     content: "";
     display: block;
-
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-
-    width: 60%;
-    height: 2px;
-
+    width: 60px;
+    height: 3px;
     border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--primary-color);
+}
+
+.content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 16px 0 8px;
+}
+
+.content h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 12px 0 6px;
+}
+
+.content h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 8px 0 4px;
+}
+
+.content hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content ul, .content ol {
+    padding-left: 20px;
+    margin: 8px 0;
+}
+
+.content li {
+    margin: 4px 0;
+}
+
+.content code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.content pre {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 12px 0;
+}
+
+.content pre code {
+    background: none;
+    padding: 0;
 }
 
 .button {
-    width: min(100%, 250px);
-    cursor: pointer;
-    font-size: 1.3rem;
-    padding: 25px;
+    align-self: center;
+    min-width: 200px;
 }
 
-@keyframes transition {
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
     to {
-        transform: translateY(0);
         opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+}
+
+@media (min-width: 1400px) {
+    .dialog {
+        max-width: 1200px;
+    }
+    
+    .carousel {
+        min-height: 500px;
+        max-height: 700px;
+    }
+    
+    .imageWrapper {
+        min-height: 500px;
+    }
+    
+    .image {
+        max-height: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+    
+    .dialog {
+        max-width: 100%;
+        max-height: 95vh;
+        border-radius: 16px 16px 0 0;
+    }
+    
+    .dialogClosing {
+        animation: slideDownMobile 0.3s ease forwards;
+    }
+    
+    .scrollableContent {
+        padding: 20px 16px 24px;
+        gap: 16px;
+    }
+    
+    .carousel {
+        min-height: 250px;
+        max-height: 350px;
+    }
+    
+    .imageWrapper {
+        min-height: 250px;
+    }
+    
+    .image {
+        max-height: 350px;
+    }
+}
+
+@keyframes slideDownMobile {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
     }
 }

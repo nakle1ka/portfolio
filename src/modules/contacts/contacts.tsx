@@ -18,9 +18,9 @@ export const Contacts = () => {
             <Container>
                 <div className={`${styles.content} ${inView ? styles.inView : ""}`}>
                     <div className={styles.header}>
-                        <Title size="md">Let's Connect</Title>
+                        <Title size="md">Let&apos;s Connect</Title>
                         <p className={styles.subtitle}>
-                            Have a project in mind or just want to chat? Feel free to reach out through any of these channels. I'm always open to new opportunities and collaborations.
+                            Have a project in mind or just want to chat? Feel free to reach out through any of these channels. I&apos;m always open to new opportunities and collaborations.
                         </p>
                     </div>
 
@@ -33,7 +33,7 @@ export const Contacts = () => {
                             />
                         ))}
                     </div>
-                    
+
                     <p className={styles.copyHint}>click to copy</p>
                 </div>
             </Container>

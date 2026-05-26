@@ -3,35 +3,38 @@
 import { useInView } from "react-intersection-observer";
 import { Container } from "@/components/container/container"
 import { Title } from "@/components/ui/title/title"
-import { Mail, Phone, Send } from "lucide-react"
+import { ContactCard } from "./components/contactCard/contactCard"
+import { contactsList } from "./helpers/contactsList"
 import styles from "./contacts.module.css"
 
 export const Contacts = () => {
     const { inView, ref } = useInView({
         triggerOnce: true,
-        threshold: 0.1
+        threshold: 0.5
     })
 
-    console.log(inView)
-
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} ref={ref}>
             <Container>
-                <Title size="sm">Contacts</Title>
+                <div className={`${styles.content} ${inView ? styles.inView : ""}`}>
+                    <div className={styles.header}>
+                        <Title size="md">Let's Connect</Title>
+                        <p className={styles.subtitle}>
+                            Have a project in mind or just want to chat? Feel free to reach out through any of these channels. I'm always open to new opportunities and collaborations.
+                        </p>
+                    </div>
 
-                <div className={`${styles.grid} ${inView ? styles.inView : ""}`} ref={ref}>
-                    <div className={styles.contact}>
-                        <Mail className={styles.icon} />
-                        <p className={styles.p}>nakle1ka.dev@gmail.com</p>
+                    <div className={styles.grid}>
+                        {contactsList.map((contact, index) => (
+                            <ContactCard
+                                key={contact.label}
+                                contact={contact}
+                                animationDelay={index * 150}
+                            />
+                        ))}
                     </div>
-                    <div className={styles.contact}>
-                        <Send className={styles.icon} />
-                        <p className={styles.p}>@nakle1kaaa</p>
-                    </div>
-                    <div className={styles.contact}>
-                        <Phone className={styles.icon} />
-                        <p className={styles.p}>+7 901 203 75-51</p>
-                    </div>
+                    
+                    <p className={styles.copyHint}>click to copy</p>
                 </div>
             </Container>
         </div>

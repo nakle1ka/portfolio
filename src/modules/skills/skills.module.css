@@ -6,12 +6,30 @@
 .skillsGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 @media (max-width: 850px) {
     .skillsGrid {
-        grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skillsGrid {
+        margin-top: 32px;
+        gap: 24px;
+    }
+    
+    .group {
+        gap: 10px;
     }
 }

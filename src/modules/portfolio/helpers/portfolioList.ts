@@ -10,10 +10,6 @@ export const portfolioList: TPortfolioCard[] = [
     {
         images: [
             {
-                id: 3123,
-                url: "/images/portfolio/chess_engine/pawn.png"
-            },
-            {
                 id: 213132,
                 url: "/images/portfolio/chess_engine/minimax.jpg"
             },
